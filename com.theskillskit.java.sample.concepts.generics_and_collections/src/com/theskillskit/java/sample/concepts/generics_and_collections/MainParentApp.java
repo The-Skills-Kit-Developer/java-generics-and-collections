@@ -13,6 +13,15 @@ public class MainParentApp {
         List<Thing> things = List.of(new Thing("House"));
         //MainParentApp.printParentName(things); generates compiler error
         MainParentApp.printParentName(List.of(mom,dad));
+        //
+        printListOfPersonNames(List.of(mom,dad));
+
+    }
+
+    public static void printListOfPersonNames(List<? extends Person> personList){
+        for(var p: personList){
+            printPersonName(p);
+        }
     }
 
     public static  <T extends Person> void printPersonName(T person){
